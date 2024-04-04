@@ -33,13 +33,13 @@
 
     **Actualizar la Branch `develop`:**
 
-        Obtener los últimos cambios en la branch `develop`:
-    
-        ```bash
-        git pull origin develop
-        ```
+   Obtener los últimos cambios en la branch `develop`:
 
-4. **Renombrar Archivos de Configuración:**
+   ```bash
+   git pull origin develop
+   ```
+
+5. **Renombrar Archivos de Configuración:**
 
     Renombrar el archivo `cipe/settings.py.sample` a `cipe/settings.py`:
     
@@ -53,7 +53,7 @@
     mv .env.dev.sample .env.dev
     ```
 
-5. **Crear Base de Datos y Configurar Permisos para MySQL:**
+6. **Crear Base de Datos y Configurar Permisos para MySQL:**
 
     Acceder a MySQL como el usuario `root`:
     
@@ -72,7 +72,7 @@
 
     Una vez ejecutados los comandos SQL, puedes salir del cliente de MySQL con el comando `exit`.
 
-6. **Crear Base de Datos y Configurar Permisos para PostgreSQL:**
+7. **Crear Base de Datos y Configurar Permisos para PostgreSQL:**
 
     Acceder a PostgreSQL como el usuario `postgres`:
     
@@ -90,7 +90,7 @@
 
     Una vez ejecutados los comandos SQL, puedes salir del cliente de PostgreSQL con el comando `\q`.
 
-7. **Generar Clave Secreta y API Key de Google:**
+8. **Generar Clave Secreta y API Key de Google:**
 
     Generar una clave secreta aleatoria para utilizar en la configuración del proyecto y una API Key de Google: https://developers.google.com/maps/documentation/embed/get-api-key?hl=es-419 
    
@@ -99,7 +99,7 @@
     python3 -c 'import random; print("".join([random.choice("abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)") for i in range(50)]))'
     ```
 
-8. **Configurar Variables de Entorno para MySQL:**
+9. **Configurar Variables de Entorno para MySQL:**
 
     Configurar las variables de entorno y parámetros de configuración de la base de datos en el archivo `.env.dev` para MySQL:
     
@@ -117,7 +117,7 @@
     DATABASE=mysql
     ```
 
-9. **Configurar Variables de Entorno para PostgreSQL:**
+10. **Configurar Variables de Entorno para PostgreSQL:**
 
     Configurar las variables de entorno y parámetros de configuración de la base de datos en el archivo `.env.dev` para PostgreSQL:
     
@@ -135,7 +135,7 @@
     DATABASE=postgres
     ```
 
-10. **Construir el Contenedor Docker para Develop:**
+11. **Construir el Contenedor Docker para Develop:**
 
     Construir el contenedor Docker utilizando el archivo de composición `docker-compose.yml`:
     
@@ -143,11 +143,11 @@
     docker-compose up --build -d
     ```
 
-11. **Acceder a la Aplicación en Develop:**
+12. **Acceder a la Aplicación en Develop:**
 
     Ir a http://localhost:8000 para acceder a la herramienta CIPE en desarrollo.
 
-12. **Construir el Contenedor Docker en Producción:**
+13. **Construir el Contenedor Docker en Producción:**
 
     Construir el contenedor Docker para producción utilizando el archivo de composición `docker-compose.prod.yml`:
     
@@ -155,7 +155,7 @@
     docker-compose -f docker-compose.prod.yml up --build -d
     ```
 
-13. **Cargar Datos Iniciales en Producción:**
+14. **Cargar Datos Iniciales en Producción:**
 
     Cargar datos iniciales en la base de datos de producción utilizando el siguiente comando:
     
@@ -163,6 +163,6 @@
     docker-compose -f docker-compose.prod.yml exec app python manage.py loaddata data/initial_data.json
     ```
 
-14. **Acceder a la Aplicación en Producción:**
+15. **Acceder a la Aplicación en Producción:**
 
     Para acceder a la herramienta CIPE en producción, ve a http://localhost:1550 en tu navegador web.
